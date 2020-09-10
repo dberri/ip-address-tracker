@@ -1,0 +1,44 @@
+.InfoStrip {
+  border-radius: 1rem;
+  display: grid;
+  background-color: var(--color-white);
+  padding: 2rem 0;
+}
+
+.InfoStrip-data {
+  padding: 0 2rem;
+}
+
+.InfoStrip-dataTitle {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--color-gray-500);
+  margin-bottom: 0.3rem;
+}
+
+.InfoStrip-dataParagraph {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+  .InfoStrip {
+    text-align: center;
+  }
+
+  .InfoStrip-data:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 995px) {
+  .InfoStrip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 996px) {
+  .InfoStrip {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
