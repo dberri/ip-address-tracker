@@ -6,6 +6,8 @@ Find out where an IP address is from! I found this idea at Frontend Mentor as a 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+![Screenshot of the IP Address Tracker homepage](ipaddresstracker.png)
+
 ## Installing
 
 You can clone this repo and then run `yarn install` inside the project's folder.
