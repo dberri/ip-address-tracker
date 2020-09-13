@@ -1,19 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './AppMap.css';
-import {
-  Map, TileLayer, Marker
-} from 'react-leaflet';
+import { Map, TileLayer, Marker } from 'react-leaflet';
+import { Position } from '../../shared/interfaces';
 
 const zoomLevel = 10;
 
-interface Props {
-  position: {
-    lat: number,
-    lng: number
-  }
-}
-
-const AppMap: React.FC<Props> = ({ position }) => {
+const AppMap = ({ position }: { position: Position }) => {
   return (
     <Map className="Map" zoom={zoomLevel} minZoom={zoomLevel} maxZoom={zoomLevel} zoomControl={false} center={position}>
       <TileLayer

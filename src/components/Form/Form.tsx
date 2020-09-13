@@ -1,11 +1,8 @@
 import React, { useRef, useEffect } from 'react'
 import './Form.css'
+import { apiKey } from '../../config';
 
-interface Props {
-  submitted: Function
-}
-
-const Form: React.FC<Props> = ({ submitted }) => {
+const Form = ({ submitted }: { submitted: Function }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
@@ -16,7 +13,6 @@ const Form: React.FC<Props> = ({ submitted }) => {
   const fetchIpData = () => {
     const address = inputRef.current ? inputRef.current.value : '';
 
-    const apiKey = '';
     fetch(`https://cors-anywhere.herokuapp.com/https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${address}`, {
       headers: {
         'Content-Type': 'application/json',

@@ -1,16 +1,8 @@
 import React from 'react'
 import './InfoStrip.css';
+import { Info } from '../../shared/interfaces';
 
-interface Info {
-  label: string,
-  value: string,
-}
-
-interface Props {
-  data: Info[]
-}
-
-const InfoStrip: React.FC<Props> = ({ data }) => {
+const InfoStrip = ({ data }: { data: Info[] }) => {
   const info = data.map((info, idx) => (
     <div key={idx} className="InfoStrip-data">
       <h2 className="InfoStrip-dataTitle">

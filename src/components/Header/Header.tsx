@@ -2,29 +2,7 @@ import React, { useState } from 'react'
 import './Header.css';
 import Form from '../Form/Form';
 import InfoStrip from '../InfoStrip/InfoStrip';
-
-interface Info {
-  label: string,
-  value: string,
-}
-
-interface ApiResponse {
-  ip: string,
-  location: {
-    country: string,
-    region: string,
-    city: string,
-    lat: number,
-    lng: number,
-    postalCode: string,
-    timezone: string,
-  },
-  isp: string
-}
-
-interface Props {
-  setPosition: Function
-}
+import { Info, ApiResponse } from '../../shared/interfaces';
 
 const data = [
   {
@@ -45,7 +23,7 @@ const data = [
   },
 ]
 
-const Header: React.FC<Props> = ({ setPosition }) => {
+const Header = ({ setPosition }: { setPosition: Function }) => {
   const [info, setInfo] = useState<Info[]>(data);
 
   const handleSubmittedData = (data: ApiResponse) => {

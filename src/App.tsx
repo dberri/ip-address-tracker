@@ -3,11 +3,7 @@ import './App.css';
 
 import Header from './components/Header/Header';
 import Map from './components/AppMap/AppMap';
-
-interface Position {
-  lat: number,
-  lng: number
-}
+import { Position } from './shared/interfaces';
 
 function App() {
   const [position, setPosition] = useState<Position>({
