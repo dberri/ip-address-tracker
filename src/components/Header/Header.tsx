@@ -22,6 +22,10 @@ interface ApiResponse {
   isp: string
 }
 
+interface Props {
+  setPosition: Function
+}
+
 const data = [
   {
     label: "IP Address",
@@ -41,7 +45,7 @@ const data = [
   },
 ]
 
-const Header = () => {
+const Header: React.FC<Props> = ({ setPosition }) => {
   const [info, setInfo] = useState<Info[]>(data);
 
   const handleSubmittedData = (data: ApiResponse) => {
@@ -63,6 +67,11 @@ const Header = () => {
         value: data.isp
       }
     ]);
+
+    setPosition({
+      lat: data.location.lat,
+      lng: data.location.lng
+    })
   }
 
   return (

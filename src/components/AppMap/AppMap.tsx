@@ -4,24 +4,16 @@ import {
   Map, TileLayer, Marker
 } from 'react-leaflet';
 
-const zoomLevel = 12;
+const zoomLevel = 10;
 
-const AppMap = () => {
-  const [position, setPosition] = useState({
-    lat: 51.505,
-    lng: -0.09
-  });
+interface Props {
+  position: {
+    lat: number,
+    lng: number
+  }
+}
 
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(position => {
-      const { latitude, longitude } = position.coords;
-      setPosition({
-        lat: latitude,
-        lng: longitude,
-      })
-    })
-  }, [])
-
+const AppMap: React.FC<Props> = ({ position }) => {
   return (
     <Map className="Map" zoom={zoomLevel} minZoom={zoomLevel} maxZoom={zoomLevel} zoomControl={false} center={position}>
       <TileLayer
