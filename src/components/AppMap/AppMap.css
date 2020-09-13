@@ -1,3 +1,4 @@
 .Map {
   height: 60vh;
+  z-index: 0;
 }

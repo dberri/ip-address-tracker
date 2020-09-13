@@ -11,8 +11,8 @@ interface Props {
 }
 
 const InfoStrip: React.FC<Props> = ({ data }) => {
-  const info = data.map(info => (
-    <div className="InfoStrip-data">
+  const info = data.map((info, idx) => (
+    <div key={idx} className="InfoStrip-data">
       <h2 className="InfoStrip-dataTitle">
         {info.label}
       </h2>

@@ -17,7 +17,7 @@
 }
 
 .InfoStrip-dataParagraph {
-  font-size: 1.75rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -40,5 +40,9 @@
 @media screen and (min-width: 996px) {
   .InfoStrip {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .InfoStrip-dataParagraph {
+    font-size: 1.75rem;
   }
 }
